@@ -4,14 +4,14 @@ class SetTesting extends AnyFunSuite {
   val emptySetObj = new EmptySet[number]
 
   test("To check if an EmptySet is including a number"){
-    val struct = emptySetObj.include(number(7))
-    assert(struct.contains(number(7)))
+    val struct = emptySetObj.include(number(7)).include(number(3))
+    assert(struct.contains(number(3)))
   }
 
   val nonEmptySetObj = new NonEmptySet[number](
     number(3),
-    emptySetObj.include(nodeValue = number(2)),
-    emptySetObj.include(nodeValue = number(1))
+    emptySetObj.include(number(2)),
+    emptySetObj.include(number(1))
   )
 
   test("To check if an NonEmptySet is contains a number"){
